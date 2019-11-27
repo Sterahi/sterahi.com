@@ -1,5 +1,6 @@
 .navigation {
     position: fixed;
+    top:0;
     ul {
         list-style: none;
         li {
@@ -18,7 +19,6 @@
                     color: $darker;
                     padding-bottom:5px;
                     border-bottom: 2px solid $darker;
-
                 }
             }
         }
@@ -34,7 +34,7 @@
     h1 {
         margin: 0 auto;
         img {
-            height:350px;
+            height:400px;
         }
     }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
-
 import { BrowserRouter as Router, Route, Switch, Link }  from 'react-router-dom'
-import Article from '../Article/Article'
+
+import Articles from '../Articles/Articles'
 import Home from '../Home/Home'
 
 import logo_transparent from './logo_transparent.png'
@@ -11,31 +11,28 @@ export default function AppRouter() {
     return (
         <>
             <Router>
-                <div className = "navigation">
-                    <ul>
-                        <li>
-                            <Link to ="/">Home</Link>
-                        </li>
-                        <li>
-                            <Link to = "/projects">Projects</Link>
-                        </li>
-                    </ul>
+                <nav>
+                    <div className = "navigation">
+                        <ul>
+                            <li>
+                                <Link to ="/">Home</Link>
+                            </li>
+                            <li>
+                                <Link to = "/projects">Projects</Link>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                
+                <div className = "hero">
+                    <h1><img src = { logo_transparent } className = 'logo' alt = 'logo' /></h1>
                 </div>
 
                 <Switch>
-                    <Route path = '/'>
-                        <Home />
-                    </Route>
-                    <Route path = '/project/:id'>
-                        <Article />
-                    </Route>
+                    <Route path = '/projects' component = { Articles } />
+                    <Route path = '/' component = { Home }/>
                 </Switch>
             </Router>
-            <div className = 'home'>
-                <div className = "hero">
-                    <h1><img src = {logo_transparent} className = 'logo' alt = 'logo' /></h1>
-                </div>
-            </div>
         </>
     )
 }
