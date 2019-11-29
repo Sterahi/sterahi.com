@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Link }  from 'react-router-dom'
 
 import Articles from '../Articles/Articles'
+import Article from '../Article/Article'
 import Home from '../Home/Home'
 
 import logo_transparent from './logo_transparent.png'
@@ -23,12 +24,13 @@ export default function AppRouter() {
                         </ul>
                     </div>
                 </nav>
-                
+
                 <div className = "hero">
                     <h1><img src = { logo_transparent } className = 'logo' alt = 'logo' /></h1>
                 </div>
 
                 <Switch>
+                    <Route path = "/project/:slug" component = {Article} />
                     <Route path = '/projects' component = { Articles } />
                     <Route path = '/' component = { Home }/>
                 </Switch>

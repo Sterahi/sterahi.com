@@ -11,14 +11,6 @@ export default class Home extends React.Component{
         }
     }
 
-    componentWillMount() {
-        this.getProjects()
-    }
-
-    getProjects() {
-
-    }
-
     render () {
         return (
             <div>
