@@ -63,10 +63,9 @@ export default class Articles extends React.Component {
                                     codeAvaliable = <div className ='iconWrapper'></div>
                                 }
                                 return(
-                                    <div className = 'card' key = {project.sys.id} style = {{background: `url(${bkgImage}) top center / cover no-repeat`}}>
+                                    <div className = 'card' key = {project.sys.id} style = {{background: `url(${bkgImage}) center center / cover no-repeat`}}>
                                         <div className = "cardInner">
                                             <span>{project.fields.projectName}</span>
-                                            {console.log(project)}
                                             <Link to = {`/project/${project.fields.slug}`} className = "button">See Details!</Link>
                                             {codeAvaliable}
                                         </div>

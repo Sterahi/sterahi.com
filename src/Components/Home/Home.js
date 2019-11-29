@@ -1,20 +1,52 @@
 import React from 'react';
 
+import { createClient } from 'contentful'
+
 import './Home.scss';
+
+const CONTENTFUL_SPACE = '21nhxxvf3po0',
+      CONTENTFUL_TOKEN = 'ba71aa941315ef7ed462e4f40c9babe61d37ef6fc49c9db37ccd84c9246f6267'
+
+const client = createClient({
+    space: CONTENTFUL_SPACE,
+    accessToken: CONTENTFUL_TOKEN
+})
+
+const marked = require('marked')
 
 export default class Home extends React.Component{
     constructor(props) {
         super(props)
         this.state = {
-            loading: true,
-            page: 1
+            loading: true
         }
     }
 
+    componentDidMount() {
+        this.getHome()
+    }
+
+    getHome(){
+        client.getEntries({
+            'sys.contentType.sys.id': 'homePage'
+        }).then(page => {
+            this.setState({
+                page: page.items[0].fields
+            })
+        })
+    }
+
     render () {
+        let { page } = this.state,
+            details
+
+        if(page !== undefined) {
+            details = page.pageBody
+        }
         return (
-            <div>
+            <div className = "home">
                 <h1>Home</h1>
+                <div dangerouslySetInnerHTML = {{__html: marked(details||'')}}></div>
             </div>
         )
     }

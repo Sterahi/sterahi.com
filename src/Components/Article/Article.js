@@ -36,7 +36,6 @@ export default class Article extends React.Component {
         }).then(projects => {
             projects.items.forEach(project => {
                 if(project.fields.slug === this.props.match.params.slug) {
-                    console.log(project)
                     this.setState({
                         project: project.fields
                     })
