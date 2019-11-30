@@ -18,7 +18,8 @@ export default class Home extends React.Component{
     constructor(props) {
         super(props)
         this.state = {
-            loading: true
+            loading: true,
+            page: []
         }
     }
 
@@ -37,16 +38,25 @@ export default class Home extends React.Component{
     }
 
     render () {
-        let { page } = this.state,
-            details
+        let { page } = this.state
 
-        if(page !== undefined) {
-            details = page.pageBody
-        }
         return (
             <div className = "home">
-                <h1>Home</h1>
-                <div dangerouslySetInnerHTML = {{__html: marked(details||'')}}></div>
+                <div className = "bandContainer">
+                    {
+                        (page.bands||[]).map((band, id) => {
+                            return(
+                                <div className = "band" key = {id}>
+                                    <div className = "innerBand">
+                                        <h3>{band.fields.title}</h3>
+                                        <div className = "bandBody" dangerouslySetInnerHTML = {{__html: marked(band.fields.details)}}></div>
+                                        <div className = "bkgImage" style ={{background: `url(${band.fields.imageUrl}) center center / cover no-repeat`}}/>
+                                    </div>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
             </div>
         )
     }
