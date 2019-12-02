@@ -38,7 +38,7 @@ export default class VizAwareCard extends React.Component {
                 }}>
                     <div className = "cardInner">
                         <span>{project.projectName}</span>
-                        <Link to = {`/project/`} className = "button">See Details!</Link>
+                        <Link to = {`/project/${project.slug}`} className = "button">See Details!</Link>
                         {codeAvaliable}
                     </div>
                 </div>
