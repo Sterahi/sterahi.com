@@ -34,7 +34,18 @@
 
             box-shadow: 8px 10px 10px rgba(0, 0, 0, 0.5);
 
-            transition: ease box-shadow .3s;
+            transition: ease all .3s;
+            @media only screen and(max-width: 900px) {
+                width: 45%;
+            }
+            @media only screen and(max-width: 500px) {
+                width: 100%;
+                .cardInner {
+                    background-color: rgba(0,0,0,0.4);
+
+                    opacity: 1!important
+                }
+            }
             &:hover {
                 box-shadow: 12px 14px 15px rgba(0, 0, 0, 0.4);
                 .cardInner {

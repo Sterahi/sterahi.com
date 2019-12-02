@@ -2,6 +2,8 @@ import React from 'react';
 
 import { createClient } from 'contentful'
 
+import VizAwareImg from '../VizAwareImg/VizAwareImage'
+
 import './Home.scss';
 
 const CONTENTFUL_SPACE = '21nhxxvf3po0',
@@ -19,7 +21,8 @@ export default class Home extends React.Component{
         super(props)
         this.state = {
             loading: true,
-            page: []
+            page: [],
+            visible: []
         }
     }
 
@@ -32,7 +35,8 @@ export default class Home extends React.Component{
             'sys.contentType.sys.id': 'homePage'
         }).then(page => {
             this.setState({
-                page: page.items[0].fields
+                page: page.items[0].fields,
+                imgViz: false
             })
         })
     }
@@ -50,7 +54,7 @@ export default class Home extends React.Component{
                                     <div className = "innerBand">
                                         <h3>{band.fields.title}</h3>
                                         <div className = "bandBody" dangerouslySetInnerHTML = {{__html: marked(band.fields.details)}}></div>
-                                        <div className = "bkgImage" style ={{background: `url(${band.fields.imageUrl}) center center / cover no-repeat`}}/>
+                                        <VizAwareImg src = {band.fields.imageUrl} />
                                     </div>
                                 </div>
                             )
