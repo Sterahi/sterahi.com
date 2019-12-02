@@ -1,8 +1,12 @@
+$altColor: #e2dcd5;
+// * {
+//     color: #333;
+// }
 .navigation {
     position: fixed;
     top:0;
     width: 100%;
-    background-color: #e2dcd5;
+    background-color: $altColor;
     z-index: 100;
     ul {
         list-style: none;
@@ -10,15 +14,15 @@
             display: inline-block;
             padding:0 10px;
             a {
-                $navColor: #5e616a;
+                $navColor: #333;
                 color: $navColor;
                 text-decoration: none;
                 padding-bottom: 2px;
-                border-bottom: 2px solid $navColor;
+                border-bottom: 2px solid #ae2a2f;
 
                 transition: ease all .3s;
                 &:hover {
-                    $darker: darken($navColor, 20%);
+                    $darker: darken(#ae2a2f, 20%);
                     color: $darker;
                     padding-bottom:5px;
                     border-bottom: 2px solid $darker;
@@ -27,9 +31,21 @@
         }
     }
 }
-
+h3 {
+    margin-right: 28px;
+    &:before {
+        width: 30px;
+        height: 3px;
+        background-color: #ae2a2f;
+        content: '';
+        position: relative;
+        display: inline-block;
+        bottom: -12px;
+        right: -30px;
+    }
+}
 .hero {
-    background-color:#e2dcd5;
+    background-color:$altColor;
     margin:0;
     display: flex;
     align-items: center;

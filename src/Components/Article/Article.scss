@@ -2,13 +2,30 @@
     width: 90%;
     margin: 0 auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
+    @media only screen and(max-width: 900px) {
+        flex-direction: row;
+        .articleBody, .articleLinks {
+            width: 100%!important;
+        }
+    }
     flex-grow: 1;
     flex-wrap: wrap;
     justify-content: space-around;
     h2 {
         text-align: center;
         width: 100%;
+        margin-right: 30px;
+        &:before {
+            width: 30px;
+            height: 3px;
+            background-color: #ae2a2f;
+            content: '';
+            position: relative;
+            display: inline-block;
+            bottom: -12px;
+            right: -30px;
+        }
     }
     .button {
         display: flex;
@@ -50,7 +67,8 @@
     .articleBody{
         width: 60%;
         padding: 0 15px;
-        ul {
+        text-align: justify;
+        ul, ol {
             padding-left: 20px;
             li {
                 padding:5px;

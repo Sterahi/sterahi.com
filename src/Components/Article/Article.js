@@ -74,15 +74,14 @@ export default class Article extends React.Component {
             languages = project.languages
         }
         if(project.companyName !== undefined){
-            company = project.companyName
+            company = `Built for: ${project.companyName}`
         }
         return(
             <div className = "article">
                 <h2>{project.projectName}</h2>
-                <div className = "articleBody" dangerouslySetInnerHTML= {{__html: marked(details||'')}}></div>
                 <div className = "articleLinks">
                     <strong>Role: {project.role}</strong>
-                    Built for: { company }
+                    { company }
                     <div className = "languageContainer">
                         Languages: {
                             languages.map((language, id) => {
@@ -101,6 +100,7 @@ export default class Article extends React.Component {
                         </Link>
                     </div>
                 </div>
+                <div className = "articleBody" dangerouslySetInnerHTML= {{__html: marked(details||'')}}></div>
             </div>
         )
     }
