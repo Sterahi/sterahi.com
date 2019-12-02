@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
 
 import { createClient } from 'contentful'
 
@@ -7,6 +6,7 @@ import './Articles.scss';
 import VizAwareCard from '../VizAwareCard/VizAwareCard'
 import { faCode } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Spinner from 'react-spinkit'
 
 const CONTENTFUL_SPACE = '21nhxxvf3po0',
       CONTENTFUL_TOKEN = 'ba71aa941315ef7ed462e4f40c9babe61d37ef6fc49c9db37ccd84c9246f6267'
@@ -19,7 +19,7 @@ export default class Articles extends React.Component {
     constructor() {
         super()
         this.state = {
-            loading: true
+            loading: false
         }
     }
 
@@ -28,11 +28,13 @@ export default class Articles extends React.Component {
     }
 
     getProjects() {
+        this.setState({loading: true})
         client.getEntries({
             'sys.contentType.sys.id': 'project'
         }).then(projects => {
             this.setState({
-                projects: projects.items
+                projects: projects.items,
+                loading: false
             })
         })
     }
@@ -41,6 +43,11 @@ export default class Articles extends React.Component {
         let { projects } = this.state
         return(
             <div className="articles">
+                {this.state.loading &&
+                    <div className = "loader">
+                        <Spinner />
+                    </div>
+                }
                 <div className="cardContainer">
                     <div className = "pageHead">
                         <h3> Projects </h3>
@@ -62,11 +69,3 @@ export default class Articles extends React.Component {
         )
     }
 }
-
-// <div className = 'card' key = {project.sys.id} style = {{background: `url(${bkgImage}) center center / cover no-repeat`}}>
-//     <div className = "cardInner">
-//         <span>{project.fields.projectName}</span>
-//         <Link to = {`/project/${project.fields.slug}`} className = "button">See Details!</Link>
-//         {codeAvaliable}
-//     </div>
-// </div>

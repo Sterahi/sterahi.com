@@ -5,6 +5,7 @@ import { createClient } from 'contentful'
 import VizAwareImg from '../VizAwareImg/VizAwareImage'
 
 import './Home.scss';
+import Spinner from 'react-spinkit'
 
 const CONTENTFUL_SPACE = '21nhxxvf3po0',
       CONTENTFUL_TOKEN = 'ba71aa941315ef7ed462e4f40c9babe61d37ef6fc49c9db37ccd84c9246f6267'
@@ -46,6 +47,11 @@ export default class Home extends React.Component{
 
         return (
             <div className = "home">
+                {this.state.loading &&
+                    <div className = "loader">
+                        <Spinner />
+                    </div>
+                }
                 <div className = "bandContainer">
                     {
                         (page.bands||[]).map((band, id) => {

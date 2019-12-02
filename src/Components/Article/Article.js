@@ -6,6 +6,7 @@ import { createClient } from 'contentful'
 import './Article.scss';
 import { faCode, faGlobe, faTerminal } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Spinner from 'react-spinkit'
 
 const CONTENTFUL_SPACE = '21nhxxvf3po0',
       CONTENTFUL_TOKEN = 'ba71aa941315ef7ed462e4f40c9babe61d37ef6fc49c9db37ccd84c9246f6267'
@@ -22,7 +23,7 @@ export default class Article extends React.Component {
         super()
         this.state = {
             project:[],
-            loading: true
+            loading: false
         }
     }
 
@@ -31,13 +32,15 @@ export default class Article extends React.Component {
     }
 
     getArticle() {
+        this.setState({loading: true})
         client.getEntries({
             'sys.contentType.sys.id': 'project'
         }).then(projects => {
             projects.items.forEach(project => {
                 if(project.fields.slug === this.props.match.params.slug) {
                     this.setState({
-                        project: project.fields
+                        project: project.fields,
+                        loading: false
                     })
                 }
             })
@@ -78,6 +81,11 @@ export default class Article extends React.Component {
         }
         return(
             <div className = "article">
+                {this.state.loading &&
+                    <div className = "loader">
+                        <Spinner />
+                    </div>
+                }
                 <h2>{project.projectName}</h2>
                 <div className = "articleLinks">
                     <strong>Role: {project.role}</strong>
