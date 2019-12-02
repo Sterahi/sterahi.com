@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { createClient } from 'contentful'
 
 import './Articles.scss';
+import VizAwareCard from '../VizAwareCard/VizAwareCard'
 import { faCode } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -37,9 +38,7 @@ export default class Articles extends React.Component {
     }
 
     render() {
-        let { projects } = this.state,
-            bkgImage,
-            codeAvaliable
+        let { projects } = this.state
         return(
             <div className="articles">
                 <div className="cardContainer">
@@ -52,25 +51,8 @@ export default class Articles extends React.Component {
                             if (project === undefined) {
                                 return '';
                             } else {
-                                if(project.fields.image !== undefined) {
-                                    bkgImage = project.fields.image.fields.file.url
-                                } else {
-                                    bkgImage = ''
-                                }
-                                if (project.fields.gitlLink !== undefined) {
-                                    codeAvaliable = <div className = 'iconWrapper'><FontAwesomeIcon icon = {faCode} /></div>
-                                } else {
-                                    codeAvaliable = <div className ='iconWrapper'></div>
-                                }
                                 return(
-                                    <div className = 'card' key = {project.sys.id} style = {{background: `url(${bkgImage}) center center / cover no-repeat`}}>
-                                        <div className = "cardInner">
-                                            <span>{project.fields.projectName}</span>
-                                            <Link to = {`/project/${project.fields.slug}`} className = "button">See Details!</Link>
-                                            {codeAvaliable}
-                                        </div>
-                                    </div>
-
+                                    <VizAwareCard project = {project.fields} />
                                 )
                             }
                         })
@@ -80,3 +62,11 @@ export default class Articles extends React.Component {
         )
     }
 }
+
+// <div className = 'card' key = {project.sys.id} style = {{background: `url(${bkgImage}) center center / cover no-repeat`}}>
+//     <div className = "cardInner">
+//         <span>{project.fields.projectName}</span>
+//         <Link to = {`/project/${project.fields.slug}`} className = "button">See Details!</Link>
+//         {codeAvaliable}
+//     </div>
+// </div>
