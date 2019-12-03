@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Elizabeth Murray's Portfolio",
+  "name": "Portfolio made with React & Contentful",
   "icons": [
     {
       "src": "favico.png",
