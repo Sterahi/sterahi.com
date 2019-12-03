@@ -42,6 +42,8 @@ export default class VizAwareCard extends React.Component {
                     style = {{
                         background: `url(${project.image.fields.file.url}) center center / cover no-repeat`,
                         opacity: this.state.cardViz ? 1: .25,
+                        position: 'relative',
+                        left: this.state.cardViz ? 0: 300,
                         transition: 'ease all 1.5s'
                 }}>
                     <div className = "cardInner">
