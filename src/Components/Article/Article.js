@@ -7,7 +7,6 @@ import "./Article.scss"
 import { faCode, faGlobe, faTerminal } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Spinner from "react-spinkit"
-import VizAwareImg from "../VizAwareImg/VizAwareImage"
 
 const CONTENTFUL_SPACE = "21nhxxvf3po0"
 const CONTENTFUL_TOKEN = "ba71aa941315ef7ed462e4f40c9babe61d37ef6fc49c9db37ccd84c9246f6267"
