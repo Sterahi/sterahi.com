@@ -54,12 +54,12 @@ export default class Articles extends React.Component {
                         <small>If a project has the <code><FontAwesomeIcon icon = {faCode} /></code> icon the source code is available!</small>
                     </div>
                     {
-                        (projects||[]).map((project) => {
+                        (projects||[]).map((project, id) => {
                             if (project === undefined) {
                                 return '';
                             } else {
                                 return(
-                                    <VizAwareCard project = {project.fields} />
+                                    <VizAwareCard project = {project.fields} key = { id } />
                                 )
                             }
                         })

@@ -44,7 +44,7 @@ export default class VizAwareCard extends React.Component {
                         opacity: this.state.cardViz ? 1: .25,
                         position: 'relative',
                         left: this.state.cardViz ? 0: 300,
-                        transition: 'ease all 1.5s'
+                        transition: 'ease all 1s'
                 }}>
                     <div className = "cardInner">
                         <span>{project.projectName}</span>
