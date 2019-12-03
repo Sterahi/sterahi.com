@@ -10,7 +10,12 @@ import './VizAwareCard.scss'
 
 export default class VizAwareCard extends React.Component {
     state = {
-        cardViz: false
+        cardViz: false,
+        once: false
+    }
+
+    onChangeVisibility(isVisible) {
+        this.setState({visibile: isVisible})
     }
 
     render() {
@@ -28,8 +33,11 @@ export default class VizAwareCard extends React.Component {
                 partialVisibility
                 onChange = {
                     (isVisible) => {
-                        this.setState({cardViz: isVisible})
-            }}>
+                        this.setState({
+                            cardViz: isVisible
+                        })
+                }
+            }>
                 <div className = 'card'
                     style = {{
                         background: `url(${project.image.fields.file.url}) center center / cover no-repeat`,

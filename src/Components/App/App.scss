@@ -1,7 +1,4 @@
 $altColor: #e2dcd5;
-// * {
-//     color: #333;
-// }
 .navigation {
     position: fixed;
     top:0;
@@ -13,13 +10,14 @@ $altColor: #e2dcd5;
         li {
             display: inline-block;
             padding:0 10px;
+            margin-bottom: 8px;
             a {
                 $navColor: #333;
                 color: $navColor;
                 text-decoration: none;
+                padding:10px 5px;
                 padding-bottom: 2px;
                 border-bottom: 2px solid #ae2a2f;
-
                 transition: ease all .3s;
                 &:hover {
                     $darker: darken(#ae2a2f, 20%);
@@ -55,5 +53,15 @@ h3 {
         img {
             height:400px;
         }
+    }
+}
+footer {
+    width:100%;
+    text-align:right;
+    padding:20px 0;
+    background-color: $altColor;
+    div {
+        margin-right: 75px;
+        color: lighten(#333, 15%);
     }
 }
