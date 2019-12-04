@@ -11,11 +11,11 @@ $altColor: #e2dcd5;
             display: inline-block;
             padding:0 10px;
             margin-bottom: 8px;
-            a {
+        a {
                 $navColor: #333;
                 color: $navColor;
                 text-decoration: none;
-                padding:10px 5px;
+                padding:10px 0;
                 padding-bottom: 2px;
                 border-bottom: 2px solid #ae2a2f;
                 transition: ease all .3s;
@@ -47,7 +47,7 @@ h3 {
     margin:0;
     display: flex;
     align-items: center;
-    min-height: 20vh;
+    min-height: 65vh;
     h1 {
         margin: 0 auto;
         img {
@@ -55,13 +55,29 @@ h3 {
         }
     }
 }
+section {
+    min-height: 100vh;
+    position: relative;
+}
 footer {
     width:100%;
     text-align:right;
     padding:20px 0;
     background-color: $altColor;
+    position: relative;
+    bottom: 0;
     div {
         margin-right: 75px;
         color: lighten(#333, 15%);
+    }
+}
+.more {
+    width: 100%;
+    align-self: flex-end;
+    position: absolute;
+    text-align: center;
+    // padding-bottom: 15px;
+    svg {
+        padding-bottom: 15px;
     }
 }

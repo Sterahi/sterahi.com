@@ -52,25 +52,33 @@
     @media only screen and(max-width: 500px) {
         .bandContainer .band {
             transform:none;
+            color: black;
             .innerBand {
                 transform:none;
                 text-align: left;
+                padding: 0;
                 h3 {
                     width: 100%;
+                    margin: 40px 0 45px;
                     z-index: 2;
+                    text-align: left
                 }
                 .bandBody{
                     width: 100%;
+                    padding: 10px 15px;
                     z-index: 3;
+                    background-color: white;
                 }
                 .bkgImage{
-                    width: 80%;
+                    width: 100%;
+                    margin: 0;
+                    margin-top: -76px;
                     position: absolute;
                     z-index: 1;
                     .innerImage{
                         width: 100%;
                         height:100%;
-                        background-color:rgba(255,255,255,0.3);
+                        background-color:rgba(255,255,255,0.4);
                     }
                 }
             }
