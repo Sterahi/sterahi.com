@@ -18,7 +18,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "https://sterahi.com",
   "display": "standalone",
   "theme_color": "#ae2a2f",
   "background_color": "#e2dcd5"
