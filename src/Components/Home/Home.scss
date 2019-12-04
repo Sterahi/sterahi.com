@@ -7,6 +7,7 @@
         .band {
             background-color: #e2dcd5;
             width:100vw;
+            margin-left: 0;
             transform: rotate(2deg);
             h3 {
                 width: 53%;
@@ -57,6 +58,7 @@
                 transform:none;
                 text-align: left;
                 padding: 0;
+                background-color: white!important;
                 h3 {
                     width: 100%;
                     margin: 40px 0 45px;
@@ -73,7 +75,7 @@
                     width: 100%;
                     margin: 0;
                     height: 257px;
-                    margin-top: -76px;
+                    margin-top: -77px;
                     position: absolute;
                     z-index: 1;
                     .innerImage{

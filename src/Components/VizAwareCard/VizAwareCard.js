@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
-
+import PropTypes from "prop-types"
 import VizSensor from "react-visibility-sensor"
 
 import { faCode } from "@fortawesome/free-solid-svg-icons"
@@ -44,9 +44,9 @@ export default class VizAwareCard extends React.Component {
                 <div className = 'card'
                     style = {{
                         background: `url(${project.image.fields.file.url}) center center / cover no-repeat`,
-                        opacity: this.state.cardViz ? 1: .25,
+                        opacity: this.state.cardViz ? 1: 0,
                         position: "relative",
-                        left: this.state.cardViz ? 0: 300,
+                        right: this.state.cardViz ? 0: 250,
                         transition: "ease all 1s"
                     }}>
                     <div className = "cardInner">
@@ -64,4 +64,7 @@ export default class VizAwareCard extends React.Component {
             </VizSensor>
         )
     }
+}
+VizAwareCard.propTypes = {
+    project: PropTypes.object.isRequired
 }

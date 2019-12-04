@@ -1,6 +1,7 @@
 import React from "react"
 
 import { createClient } from "contentful"
+import marked from "marked"
 
 import VizAwareImg from "../VizAwareImg/VizAwareImage"
 
@@ -15,7 +16,6 @@ const client = createClient({
     accessToken: CONTENTFUL_TOKEN
 })
 
-const marked = require("marked")
 
 export default class Home extends React.Component{
     constructor(props) {

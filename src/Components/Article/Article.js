@@ -1,7 +1,11 @@
 import React from "react"
 import { Link } from "react-router-dom"
 
+import PropTypes from "prop-types"
+
 import { createClient } from "contentful"
+
+import marked from "marked"
 
 import "./Article.scss"
 import { faCode, faGlobe, faTerminal } from "@fortawesome/free-solid-svg-icons"
@@ -16,7 +20,6 @@ const client = createClient({
     accessToken: CONTENTFUL_TOKEN,
 })
 
-const marked = require("marked")
 
 export default class Article extends React.Component {
     constructor() {
@@ -126,4 +129,10 @@ export default class Article extends React.Component {
             </div>
         )
     }
+}
+
+Article.propTypes = {
+    project: PropTypes.object.isRequired,
+    location: PropTypes.string,
+    match: PropTypes.string.isRequired
 }

@@ -1,15 +1,15 @@
-import React from 'react';
+import React from "react"
 
-import { createClient } from 'contentful'
+import { createClient } from "contentful"
 
-import './Articles.scss';
-import VizAwareCard from '../VizAwareCard/VizAwareCard'
-import { faCode } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Spinner from 'react-spinkit'
+import "./Articles.scss"
+import VizAwareCard from "../VizAwareCard/VizAwareCard"
+import { faCode } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import Spinner from "react-spinkit"
 
-const CONTENTFUL_SPACE = '21nhxxvf3po0',
-      CONTENTFUL_TOKEN = 'ba71aa941315ef7ed462e4f40c9babe61d37ef6fc49c9db37ccd84c9246f6267'
+const CONTENTFUL_SPACE = "21nhxxvf3po0",
+    CONTENTFUL_TOKEN = "ba71aa941315ef7ed462e4f40c9babe61d37ef6fc49c9db37ccd84c9246f6267"
 
 const client = createClient({
     space: CONTENTFUL_SPACE,
@@ -30,7 +30,7 @@ export default class Articles extends React.Component {
     getProjects() {
         this.setState({loading: true})
         client.getEntries({
-            'sys.contentType.sys.id': 'project'
+            "sys.contentType.sys.id": "project"
         }).then(projects => {
             this.setState({
                 projects: projects.items,
@@ -56,7 +56,7 @@ export default class Articles extends React.Component {
                     {
                         (projects||[]).map((project, id) => {
                             if (project === undefined) {
-                                return '';
+                                return ""
                             } else {
                                 return(
                                     <VizAwareCard project = {project.fields} key = { id } />
