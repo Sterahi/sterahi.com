@@ -1,21 +1,21 @@
-import React from 'react';
+import React from "react"
 
-import { createClient } from 'contentful'
+import { createClient } from "contentful"
 
-import VizAwareImg from '../VizAwareImg/VizAwareImage'
+import VizAwareImg from "../VizAwareImg/VizAwareImage"
 
-import './Home.scss';
-import Spinner from 'react-spinkit'
+import "./Home.scss"
+import Spinner from "react-spinkit"
 
-const CONTENTFUL_SPACE = '21nhxxvf3po0',
-      CONTENTFUL_TOKEN = 'ba71aa941315ef7ed462e4f40c9babe61d37ef6fc49c9db37ccd84c9246f6267'
+const CONTENTFUL_SPACE = "21nhxxvf3po0",
+    CONTENTFUL_TOKEN = "ba71aa941315ef7ed462e4f40c9babe61d37ef6fc49c9db37ccd84c9246f6267"
 
 const client = createClient({
     space: CONTENTFUL_SPACE,
     accessToken: CONTENTFUL_TOKEN
 })
 
-const marked = require('marked')
+const marked = require("marked")
 
 export default class Home extends React.Component{
     constructor(props) {
@@ -33,7 +33,7 @@ export default class Home extends React.Component{
 
     getHome(){
         client.getEntries({
-            'sys.contentType.sys.id': 'homePage'
+            "sys.contentType.sys.id": "homePage"
         }).then(page => {
             this.setState({
                 page: page.items[0].fields,
