@@ -92,9 +92,10 @@ export default class Article extends React.Component {
             company = `Built for: ${project.companyName}`
         }
         if(project.image !== undefined) {
-            image = project.image.fields.file.url
+            image = <div className="articleImage" style = {{
+                background: `url(${project.image.fields.file.url}) center center / cover no-repeat`
+            }}></div>
         }
-        console.log(image)
         return (
             <div className="article">
                 {this.state.loading
@@ -124,6 +125,7 @@ export default class Article extends React.Component {
                             <span>Back to the projects!</span>
                         </Link>
                     </div>
+                    {image}
                 </div>
                 <div className="articleBody" dangerouslySetInnerHTML={{ __html: marked(details || "") }} />
             </div>
