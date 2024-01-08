@@ -1,0 +1,65 @@
+$tabHeight: 50px;
+
+.tabbedPanel {
+  display: flex;
+  
+  max-width: 800px;
+  width:100%;
+  min-height: 250px;
+  
+  font-size:15px;
+  .tabs {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 1px 10px;
+    text-align: left;
+    position: relative;
+    button {
+      all: unset;
+      cursor: pointer;
+      padding: 15px 20px;;
+      border-left: 2px solid rgba(255,255,255,0.4);
+      transition: ease background-color .25s;
+      &:hover,
+      &:focus {
+        transition: ease background-color .25s;
+        background-color: rgba(0,0,0,0.4);
+      }
+    }
+    .tabHighlight {
+      transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s;
+      height: $tabHeight;
+      width: 2px;
+      position: absolute;
+      background-color: $accent;
+      left: 1px;
+    }
+  }
+  .panelBody {
+    &.hidden {
+      display:none;
+      opacity:1;
+      transition:ease opacity .25s
+    }
+    position:relative;
+    display: block;
+    flex-direction:column;
+    flex:1;
+
+    padding: 0px 20px 10px;
+    ul {
+      margin:0;
+      padding:0;
+      li {
+        list-style: none;
+        padding: 10px;
+        &:before {
+          content: ">";
+          color: $accent;
+          position: absolute;
+          left: 5px;
+        }
+      }
+    }
+  }
+}

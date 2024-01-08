@@ -1,0 +1,33 @@
+h1, h2, h3, h4 {
+  display: inline-block;
+  text-transform: capitalize;
+}
+
+h1 {
+  padding: 10px 0 20px;
+  margin: 0;
+  display: block;
+}
+.highlight {
+  color: $accent;
+  padding: 5px 0;
+  .logo {
+    font-size:23px;
+    color: white;
+    border-bottom: 2px solid $accent;
+  }
+}
+.brand {
+  font-size: 22px;
+}
+hr {
+  color:rgba(0,0,0,0.3);
+}
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none; 
+  color: $fontColor;
+  border-bottom: 2px solid $accent;
+}

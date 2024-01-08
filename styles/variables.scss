@@ -1,0 +1,31 @@
+$accent: #2ad370;
+$fontColor: #d4ddd9;
+
+$underlineHeight: 3px;
+
+$layoutPadding: 30px 20px;
+
+$linkTransitionSpeed: .1s;
+$linkTransition: opacity $linkTransitionSpeed, transform $linkTransitionSpeed;
+
+$navigationHeight: 30px;
+$sideNavigationWidth: 60px;
+
+$gradient: linear-gradient(
+  165deg,
+  hsl(0deg 0% 7%) 0%,
+  hsl(136deg 6% 7%) 33%,
+  hsl(137deg 10% 8%) 49%,
+  hsl(137deg 15% 8%) 58%,
+  hsl(138deg 18% 8%) 64%,
+  hsl(138deg 22% 8%) 69%,
+  hsl(139deg 25% 9%) 73%,
+  hsl(139deg 29% 9%) 76%,
+  hsl(140deg 33% 9%) 80%,
+  hsl(141deg 38% 9%) 83%,
+  hsl(142deg 42% 9%) 86%,
+  hsl(143deg 47% 9%) 89%,
+  hsl(143deg 52% 10%) 93%,
+  hsl(144deg 57% 10%) 96%,
+  hsl(145deg 63% 10%) 100%
+);

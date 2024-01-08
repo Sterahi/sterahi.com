@@ -1,0 +1,44 @@
+{
+  "company": [
+    {
+      "title": "Developer Experience Engineer",
+      "time": "June 2021 - April 2023",
+      "companyName": "3Box Labs",
+      "details": [
+        "Designed developer and implemented developer tools that increased adoption by 200%.",
+        "Mentored community developers through implementing with the Ceramic Network enabling projects to be launched rapidly and successfully.",
+        "Collaborated with multiple teams to ensure that documentation was understandable and referenceable."
+      ]
+    },
+    {
+      "title": "Full-Stack Engineer",
+      "time": "November 2020 - June 2021",
+      "companyName": "tilr",
+      "details": [
+        "Implemented Natural Language processing that improved performance by 90% and increased parsed data accuracy by 50%.",
+        "Coordinated a team of developers through optimizing user acquisition and leveraging a smart cache that ensured data was only requested when strictly necessary.",
+        "Engineered extensions to enable employers to use tilr products in their currently existing website with minimal effort."
+      ]
+    },
+    {
+      "title": "Full-Stack Engineer",
+      "time": "March 2020 - July 2020",
+      "companyName": "NorthOne",
+      "details": [
+        "Coordinated with organization wide language specific teams that established organization norms and ensured maximum growth potential.",
+        "Created and designed unopinionated packages that accelerated development and standardized error handling and logging while enabling advanced error tracking by leveraging AWS X-Ray.",
+        "Communicated with external companies to develop an in-house boilerplate for commonly requested extensions like Intuit's Quickbooks."
+      ]
+    },
+    {
+      "title": "Full-Stack Engineer | Contract",
+      "time": "July 2019 - November 2019",
+      "companyName": "Magnifi",
+      "details": [
+        "Led a cross-functional team that dismantled the monolith style codebase into a front-end and backend enabling specialists to operate without worrying about repercussions.",
+        "Established organization wide practices that enabled performance tracking metrics, reduced missed deadlines by 80% and improved communication across every team.",
+        "Architected and implemented flexible integrations with Google Calendar and Office 365 to automate calendar management and appointment creation."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+@import '../styles/variables.scss';
+
+@import '../styles/navigation.scss';
+@import '../styles/typography.scss';
+@import '../styles/tabbedPanel.scss';
+@import '../styles/layout.scss';
+
+body {
+  margin:0;
+  background-image: $gradient;
+  color:$fontColor;
+  font-size: clamp(14px, 8vw, 18px);
+}
