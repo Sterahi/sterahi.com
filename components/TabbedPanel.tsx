@@ -20,7 +20,6 @@ export const TabbedPanel = (): JSX.Element => {
     const { title, time, details } = job
     jobDetails[i] = { title, time, details }
   })
-  // TODO: improve user experience on tab transitions.
   return (
     <div className = "tabbedPanel">
       <div className = "tabs">
@@ -29,16 +28,18 @@ export const TabbedPanel = (): JSX.Element => {
           <button onClick={() => { setActive(i) }}>{job}</button>
         ))}
       </div>
-      {jobDetails.map((job, i) => (
-        <div className={`panelBody ${i === active ? '' : 'hidden'}`}>
-          <h3>{job.title}</h3>
-          <ul>
-            {job.details.map(details => (
-              <li>{details}</li>
-            ))}
-          </ul>
+      <div className="panels">
+        {jobDetails.map((job, i) => (
+          <div className={`panelBody ${i === active ? '' : 'hidden'}`}>
+            <h3>{job.title}</h3>
+            <ul>
+              {job.details.map(details => (
+                <li>{details}</li>
+              ))}
+            </ul>
         </div>
-      ))}
+        ))}
+      </div>
     </div>
   )
 }

@@ -8,12 +8,15 @@ $tabHeight: 50px;
   min-height: 250px;
   
   font-size:15px;
+
+  overflow: hidden;
   .tabs {
     display: flex;
     flex-direction: column;
     padding: 5px 1px 10px;
     text-align: left;
     position: relative;
+    flex:1;
     button {
       all: unset;
       cursor: pointer;
@@ -35,29 +38,43 @@ $tabHeight: 50px;
       left: 1px;
     }
   }
-  .panelBody {
-    &.hidden {
-      display:none;
-      opacity:1;
-      transition:ease opacity .25s
-    }
-    position:relative;
-    display: block;
-    flex-direction:column;
-    flex:1;
 
-    padding: 0px 20px 10px;
-    ul {
-      margin:0;
-      padding:0;
-      li {
-        list-style: none;
-        padding: 10px;
-        &:before {
-          content: ">";
-          color: $accent;
-          position: absolute;
-          left: 5px;
+  .panels {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    gap: 15px;
+    .panelBody {
+      max-width: 635px;
+
+      background-color: magenta;
+      &:nth-child(odd) {
+        background-color: orange;
+      }
+      &.hidden {
+        transition: ease opacity .25s
+      }
+
+      border-radius: 15px;
+
+      position:relative;
+      display: block;
+
+      padding: 0px 20px 10px;
+
+      ul {
+        margin:0;
+        padding:0;
+        li {
+          list-style: none;
+          padding: 10px;
+          &:before {
+            content: ">";
+            color: $accent;
+            position: absolute;
+            left: 5px;
+          }
         }
       }
     }

@@ -5,9 +5,10 @@
       "time": "June 2021 - April 2023",
       "companyName": "3Box Labs",
       "details": [
-        "Designed developer and implemented developer tools that increased adoption by 200%.",
-        "Mentored community developers through implementing with the Ceramic Network enabling projects to be launched rapidly and successfully.",
-        "Collaborated with multiple teams to ensure that documentation was understandable and referenceable."
+        "Architected, developed and implemented developer tooling that increased new technology adoption by 200%.",
+        "Led bi-weekly community feedback and coaching sessions, providing community support while collecting and distilling feedback that ensured features that enabled developer success were prioritized.",
+        "Developed comprehensive technical specifications that identified project objectives and implementations, enabling cross-team feedback and alignment on feature development.",
+        "Coordinated with product development to establish clear and referencable documentation, resulting in 50% fewer community support requests."
       ]
     },
     {
@@ -15,9 +16,10 @@
       "time": "November 2020 - June 2021",
       "companyName": "tilr",
       "details": [
-        "Implemented Natural Language processing that improved performance by 90% and increased parsed data accuracy by 50%.",
-        "Coordinated a team of developers through optimizing user acquisition and leveraging a smart cache that ensured data was only requested when strictly necessary.",
-        "Engineered extensions to enable employers to use tilr products in their currently existing website with minimal effort."
+        "Developed a resumé parsing service that processed user-uploaded resumes 90% faster and 50% more accurately than previous iterations.",
+        "Designed and implemented an API gateway that reduced external API calls by 30%.",
+        "Implemented an event-driven caching mechanism that reduced server load by 20% and improved API response time by 80%.",
+        "Collaborated with in-house designers to ensure designs were achievable and executed without compromise."
       ]
     },
     {
@@ -25,19 +27,20 @@
       "time": "March 2020 - July 2020",
       "companyName": "NorthOne",
       "details": [
-        "Coordinated with organization wide language specific teams that established organization norms and ensured maximum growth potential.",
-        "Created and designed unopinionated packages that accelerated development and standardized error handling and logging while enabling advanced error tracking by leveraging AWS X-Ray.",
-        "Communicated with external companies to develop an in-house boilerplate for commonly requested extensions like Intuit's Quickbooks."
+        "Coached and assisted engineers in developing and executing their ideas for new product features.",
+        "Coordinated with organization-wide, language-specific teams to establish best practices, identify potential design flaws and minimize avoidable downtime.",
+        "Developed unopinionated solutions that enabled error standardization, handling and logging by leveraging AWS X-Ray.",
+        "Designed flexible API services that enabled external service integrations."
       ]
     },
     {
-      "title": "Full-Stack Engineer | Contract",
+      "title": "Full-Stack Engineer",
       "time": "July 2019 - November 2019",
       "companyName": "Magnifi",
       "details": [
-        "Led a cross-functional team that dismantled the monolith style codebase into a front-end and backend enabling specialists to operate without worrying about repercussions.",
-        "Established organization wide practices that enabled performance tracking metrics, reduced missed deadlines by 80% and improved communication across every team.",
-        "Architected and implemented flexible integrations with Google Calendar and Office 365 to automate calendar management and appointment creation."
+        "Supported junior and intermediate developers through feature creation and implementation.",
+        "Coordinated transition from Embedded Ruby templates to a tailormade React front-end.",
+        "Implemented an Agile framework that mitigated developer burnout and increased leadership’s visibility into available developer capacity."
       ]
     }
   ]
